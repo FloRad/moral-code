@@ -1,5 +1,13 @@
 {
   "MC": {
-    "ViewerTitle": "Moral Code"
+    "ViewerTitle": "Moral Code",
+    "Selfish": {
+      "Selfish": "Selfish",
+      "Hint": "acts in their own self-interesst"
+    },
+    "Selfless": {
+      "Selfless": "Selfless",
+      "Hint": "puts others' needs before their own"
+    }
   }
 }

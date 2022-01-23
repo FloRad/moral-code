@@ -1,10 +1,32 @@
 <form autocomplete='off' class='moral-code-container'>
-  <div class='hint-box'>
-    acts in their own self-interesst
-  </div>
+  <p class='hint-box'>
+    {{localize 'MC.Selfish.Hint'}}
+  </p>
   <div class='selection-container'>
+    <div class='labels'>
+      <span class='front'>{{localize 'MC.Selfish.Selfish'}}</span>
+      <span class='back'>{{localize 'MC.Selfless.Selfless'}}</span>
+    </div>
+    <div class='options'>
+      <div class='option'>
+        <input type='radio' id='selfish-selfless_1' name='selfish-selfless' value='1' />
+        <label for='selfish-selfless_1'>1</label>
+      </div>
+      <div class='option'>
+        <input type='radio' id='selfish-selfless_2' name='selfish-selfless' value='2' />
+        <label for='selfish-selfless_2'>2</label>
+      </div>
+      <div class='option'>
+        <input type='radio' id='selfish-selfless_3' name='selfish-selfless' value='3' />
+        <label for='selfish-selfless_3'>3</label>
+      </div>
+      <div class='option'>
+        <input type='radio' id='selfish-selfless_4' name='selfish-selfless' value='4' />
+        <label for='selfish-selfless_4'>4</label>
+      </div>
+    </div>
   </div>
-  <div class='hint-box'>
-    puts others' needs before their own
-  </div>
+  <p class='hint-box'>
+    {{localize 'MC.Selfless.Hint'}}
+  </p>
 </form>

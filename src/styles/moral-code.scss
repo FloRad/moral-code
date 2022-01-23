@@ -2,7 +2,7 @@
 /*             Sass             */
 /* This is your Sass entry file */
 /* ---------------------------- */
-
+$number-of-options: 4;
 .moral-code {
   //variables
   --main-bg-color: rgb(154, 214, 212);
@@ -35,9 +35,43 @@
   .selection-container {
     justify-self: center stretch;
     align-self: center;
-    background-color: var(--main-selection-bg-color);
-    color: var(--hint-box-bg);
-    font-size: 16px;
-    border-radius: 25px;
+
+    .labels {
+      display: flex;
+      justify-content: space-between;
+      span {
+        // padding: 0 0.2em;
+        font-size: 20px;
+      }
+    }
+
+    .options {
+      background-color: var(--main-selection-bg-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--hint-box-bg);
+      font-size: 16px;
+      border-radius: 25px;
+      height: 1.25em;
+      line-height: 1.25em;
+      display: flex;
+      justify-content: space-between;
+    }
+    .option {
+      place-self: center;
+
+      input[type='radio'] {
+        display: none;
+      }
+
+      input[type='radio'] + label {
+        padding: 0.5em;
+      }
+
+      input[type='radio']:checked + label {
+        text-shadow: 0 0 10px var(--main-bg-color);
+        color: var(--dark);
+        font-weight: bold;
+      }
+    }
   }
 }

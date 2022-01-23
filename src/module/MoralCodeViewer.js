@@ -18,6 +18,11 @@ export class MoralCodeViewer extends FormApplication {
     super.activateListeners(html);
   }
 
+  async getData() {
+    const data = super.getData();
+    return data;
+  }
+
   /**
    *
    * @param {Event} event The initial triggering submission event
