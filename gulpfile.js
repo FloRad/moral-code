@@ -8,13 +8,12 @@ const sass = require('gulp-dart-sass');
 /*  CONFIGURATION   */
 /********************/
 
-const name = 'moral-compass';
+const name = 'moral-code';
 const sourceDirectory = './src';
 const distDirectory = './dist';
 const stylesDirectory = `${sourceDirectory}/styles`;
 const stylesExtension = 'scss';
-const sourceFileExtension = 'js';
-const staticFiles = ['assets', 'fonts', 'lang', 'packs', 'templates', 'module.json', `**/*.${sourceFileExtension}`];
+const staticFiles = ['assets', 'fonts', 'lang', 'packs', 'templates', 'module.json', 'module'];
 
 /********************/
 /*      BUILD       */

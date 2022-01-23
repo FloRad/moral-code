@@ -13,10 +13,15 @@
 // Import JavaScript modules
 import { registerSettings } from './settings.js';
 import { preloadTemplates } from './preloadTemplates.js';
+import { MoralCodeViewer } from './MoralCodeViewer.js';
 
 // Initialize module
-Hooks.once('init', async () => {
-  console.log('moral-compass | Initializing moral-compass');
+Hooks.once('init', () => {
+  console.log('moral-code | Initializing moral-code');
+
+  game.moral = {
+    MoralCodeViewer,
+  };
 
   // Assign custom classes and constants here
 
@@ -24,20 +29,37 @@ Hooks.once('init', async () => {
   registerSettings();
 
   // Preload Handlebars templates
-  await preloadTemplates();
+  preloadTemplates();
 
   // Register custom sheets (if any)
 });
 
 // Setup module
-Hooks.once('setup', async () => {
+Hooks.once('setup', () => {
   // Do anything after initialization but before
   // ready
 });
 
 // When ready
-Hooks.once('ready', async () => {
+Hooks.once('ready', () => {
   // Do anything once the module is ready
 });
 
 // Add any additional hooks if necessary
+Hooks.on('getActorSheetHeaderButtons', onGetActorSheetHeaderButtons);
+
+/**
+ *
+ * @param {ActorSheet} sheet
+ * @param {Array<HeaderButton>} buttons
+ */
+function onGetActorSheetHeaderButtons(sheet, buttons) {
+  buttons.unshift({
+    label: 'MC.ViewerTitle',
+    class: 'open-moral-code',
+    icon: 'fas fa-compass',
+    onclick: () => {
+      new MoralCodeViewer(sheet.actor).render(true);
+    },
+  });
+}

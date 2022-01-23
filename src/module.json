@@ -1,21 +1,21 @@
 {
-  "name": "moral-compass",
-  "title": "moral-compass",
-  "description": "",
+  "name": "moral-code",
+  "title": "Moral Code",
+  "description": "A module to bring the Moral Code concept developed by Dame GM to Foundry VTT",
   "version": "This is auto replaced",
-  "author": "<your name>",
+  "author": "FloRad",
   "authors": [
     {
-      "name": "<your name>",
-      "email": "<optionally your e-mail address>",
-      "discord": "<optionally your discord username>"
+      "name": "FloRad",
+      "email": "florad92@gmail.com",
+      "discord": "FloRad#2142"
     }
   ],
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
+  "esmodules": ["module/moral-code.js"],
+  "styles": ["styles/moral-code.css"],
   "scripts": [],
-  "esmodules": ["module/moral-compass.js"],
-  "styles": ["styles/moral-compass.css"],
   "packs": [],
   "dependencies": [],
   "languages": [
