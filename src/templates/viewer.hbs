@@ -1,32 +1,363 @@
-<form autocomplete='off' class='moral-code-container'>
-  <p class='hint-box'>
-    {{localize 'MC.Selfish.Hint'}}
-  </p>
-  <div class='selection-container'>
-    <div class='labels'>
-      <span class='front'>{{localize 'MC.Selfish.Selfish'}}</span>
-      <span class='back'>{{localize 'MC.Selfless.Selfless'}}</span>
+<form autocomplete='off' class='flexcol'>
+  <div class='moral-code-container'>
+    <!-- Selfish - Selfless -->
+    <p class='hint-box'>
+      {{localize 'MC.Selfish.Hint'}}
+    </p>
+    <div class='selection-container'>
+      <div class='labels'>
+        <span class='front'>{{localize 'MC.Selfish.Selfish'}}</span>
+        <span class='back'>{{localize 'MC.Selfless.Selfless'}}</span>
+      </div>
+      <div class='options'>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='selfish-selfless_1'
+            name='selfish-selfless'
+            value='1'
+            data-dtype='Number'
+            {{radioCheck code.selfish-selfless 1}}
+          />
+          <label for='selfish-selfless_1'>1</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='selfish-selfless_2'
+            name='selfish-selfless'
+            value='2'
+            data-dtype='Number'
+            {{radioCheck code.selfish-selfless 2}}
+          />
+          <label for='selfish-selfless_2'>2</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='selfish-selfless_3'
+            name='selfish-selfless'
+            value='3'
+            data-dtype='Number'
+            {{radioCheck code.selfish-selfless 3}}
+          />
+          <label for='selfish-selfless_3'>3</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='selfish-selfless_4'
+            name='selfish-selfless'
+            value='4'
+            data-dtype='Number'
+            {{radioCheck code.selfish-selfless 4}}
+          />
+          <label for='selfish-selfless_4'>4</label>
+        </div>
+      </div>
     </div>
-    <div class='options'>
-      <div class='option'>
-        <input type='radio' id='selfish-selfless_1' name='selfish-selfless' value='1' />
-        <label for='selfish-selfless_1'>1</label>
+    <p class='hint-box'>
+      {{localize 'MC.Selfless.Hint'}}
+    </p>
+    <!--  Practical - Idealistic -->
+    <p class='hint-box'>
+      {{localize 'MC.Practical.Hint'}}
+    </p>
+    <div class='selection-container'>
+      <div class='labels'>
+        <span class='front'>{{localize 'MC.Practical.Practical'}}</span>
+        <span class='back'>{{localize 'MC.Idealistic.Idealistic'}}</span>
       </div>
-      <div class='option'>
-        <input type='radio' id='selfish-selfless_2' name='selfish-selfless' value='2' />
-        <label for='selfish-selfless_2'>2</label>
-      </div>
-      <div class='option'>
-        <input type='radio' id='selfish-selfless_3' name='selfish-selfless' value='3' />
-        <label for='selfish-selfless_3'>3</label>
-      </div>
-      <div class='option'>
-        <input type='radio' id='selfish-selfless_4' name='selfish-selfless' value='4' />
-        <label for='selfish-selfless_4'>4</label>
+      <div class='options'>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='practical-idealistic_1'
+            name='practical-idealistic'
+            value='1'
+            data-dtype='Number'
+            {{radioCheck code.practical-idealistic 1}}
+          />
+          <label for='practical-idealistic_1'>1</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='practical-idealistic_2'
+            name='practical-idealistic'
+            value='2'
+            data-dtype='Number'
+            {{radioCheck code.practical-idealistic 2}}
+          />
+          <label for='practical-idealistic_2'>2</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='practical-idealistic_3'
+            name='practical-idealistic'
+            value='3'
+            data-dtype='Number'
+            {{radioCheck code.practical-idealistic 3}}
+          />
+          <label for='practical-idealistic_3'>3</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='practical-idealistic_4'
+            name='practical-idealistic'
+            value='4'
+            data-dtype='Number'
+            {{radioCheck code.practical-idealistic 4}}
+          />
+          <label for='practical-idealistic_4'>4</label>
+        </div>
       </div>
     </div>
+    <p class='hint-box'>
+      {{localize 'MC.Idealistic.Hint'}}
+    </p>
+    <!--  Responsible - Capricious -->
+    <p class='hint-box'>
+      {{localize 'MC.Responsible.Hint'}}
+    </p>
+    <div class='selection-container'>
+      <div class='labels'>
+        <span class='front'>{{localize 'MC.Responsible.Responsible'}}</span>
+        <span class='back'>{{localize 'MC.Capricious.Capricious'}}</span>
+      </div>
+      <div class='options'>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='lawful-anarchic_1'
+            name='lawful-anarchic'
+            value='1'
+            data-dtype='Number'
+            {{radioCheck code.lawful-anarchic 1}}
+          />
+          <label for='lawful-anarchic_1'>1</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='lawful-anarchic_2'
+            name='lawful-anarchic'
+            value='2'
+            data-dtype='Number'
+            {{radioCheck code.lawful-anarchic 2}}
+          />
+          <label for='lawful-anarchic_2'>2</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='lawful-anarchic_3'
+            name='lawful-anarchic'
+            value='3'
+            data-dtype='Number'
+            {{radioCheck code.lawful-anarchic 3}}
+          />
+          <label for='lawful-anarchic_3'>3</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='lawful-anarchic_4'
+            name='lawful-anarchic'
+            value='4'
+            data-dtype='Number'
+            {{radioCheck code.lawful-anarchic 4}}
+          />
+          <label for='lawful-anarchic_4'>4</label>
+        </div>
+      </div>
+    </div>
+    <p class='hint-box'>
+      {{localize 'MC.Capricious.Hint'}}
+    </p>
+    <!-- Lawful - Anarchic -->
+    <p class='hint-box'>
+      {{localize 'MC.Lawful.Hint'}}
+    </p>
+    <div class='selection-container'>
+      <div class='labels'>
+        <span class='front'>{{localize 'MC.Lawful.Lawful'}}</span>
+        <span class='back'>{{localize 'MC.Anarchic.Anarchic'}}</span>
+      </div>
+      <div class='options'>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='lawful-anarchic_1'
+            name='lawful-anarchic'
+            value='1'
+            data-dtype='Number'
+            {{radioCheck code.lawful-anarchic 1}}
+          />
+          <label for='lawful-anarchic_1'>1</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='lawful-anarchic_2'
+            name='lawful-anarchic'
+            value='2'
+            data-dtype='Number'
+            {{radioCheck code.lawful-anarchic 2}}
+          />
+          <label for='lawful-anarchic_2'>2</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='lawful-anarchic_3'
+            name='lawful-anarchic'
+            value='3'
+            data-dtype='Number'
+            {{radioCheck code.lawful-anarchic 3}}
+          />
+          <label for='lawful-anarchic_3'>3</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='lawful-anarchic_4'
+            name='lawful-anarchic'
+            value='4'
+            data-dtype='Number'
+            {{radioCheck code.lawful-anarchic 4}}
+          />
+          <label for='lawful-anarchic_4'>4</label>
+        </div>
+      </div>
+    </div>
+    <p class='hint-box'>
+      {{localize 'MC.Anarchic.Hint'}}
+    </p>
+    <!-- Tolerant - Intolerant -->
+    <p class='hint-box'>
+      {{localize 'MC.Tolerant.Hint'}}
+    </p>
+    <div class='selection-container'>
+      <div class='labels'>
+        <span class='front'>{{localize 'MC.Tolerant.Tolerant'}}</span>
+        <span class='back'>{{localize 'MC.Intolerant.Intolerant'}}</span>
+      </div>
+      <div class='options'>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='tolerant-intolerant_1'
+            name='tolerant-intolerant'
+            value='1'
+            data-dtype='Number'
+            {{radioCheck code.tolerant-intolerant 1}}
+          />
+          <label for='tolerant-intolerant_1'>1</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='tolerant-intolerant_2'
+            name='tolerant-intolerant'
+            value='2'
+            data-dtype='Number'
+            {{radioCheck code.tolerant-intolerant 2}}
+          />
+          <label for='tolerant-intolerant_2'>2</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='tolerant-intolerant_3'
+            name='tolerant-intolerant'
+            value='3'
+            data-dtype='Number'
+            {{radioCheck code.tolerant-intolerant 3}}
+          />
+          <label for='tolerant-intolerant_3'>3</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='tolerant-intolerant_4'
+            name='tolerant-intolerant'
+            value='4'
+            data-dtype='Number'
+            {{radioCheck code.tolerant-intolerant 4}}
+          />
+          <label for='tolerant-intolerant_4'>4</label>
+        </div>
+      </div>
+    </div>
+    <p class='hint-box'>
+      {{localize 'MC.Intolerant.Hint'}}
+    </p>
+    <!-- Progressive - Traditional -->
+    <p class='hint-box'>
+      {{localize 'MC.Progressive.Hint'}}
+    </p>
+    <div class='selection-container'>
+      <div class='labels'>
+        <span class='front'>{{localize 'MC.Progressive.Progressive'}}</span>
+        <span class='back'>{{localize 'MC.Traditional.Traditional'}}</span>
+      </div>
+      <div class='options'>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='progressive-traditional_1'
+            name='progressive-traditional'
+            value='1'
+            data-dtype='Number'
+            {{radioCheck code.progressive-traditional 1}}
+          />
+          <label for='progressive-traditional_1'>1</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='progressive-traditional_2'
+            name='progressive-traditional'
+            value='2'
+            data-dtype='Number'
+            {{radioCheck code.progressive-traditional 2}}
+          />
+          <label for='progressive-traditional_2'>2</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='progressive-traditional_3'
+            name='progressive-traditional'
+            value='3'
+            data-dtype='Number'
+            {{radioCheck code.progressive-traditional 3}}
+          />
+          <label for='progressive-traditional_3'>3</label>
+        </div>
+        <div class='option-container'>
+          <input
+            type='radio'
+            id='progressive-traditional_4'
+            name='progressive-traditional'
+            value='4'
+            data-dtype='Number'
+            {{radioCheck code.progressive-traditional 4}}
+          />
+          <label for='progressive-traditional_4'>4</label>
+        </div>
+      </div>
+    </div>
+    <p class='hint-box'>
+      {{localize 'MC.Traditional.Hint'}}
+    </p>
   </div>
-  <p class='hint-box'>
-    {{localize 'MC.Selfless.Hint'}}
-  </p>
+  <footer class='flexrow footer'>
+    <button class='moral-btn' type='submit'>Save</button>
+    <button class='moral-btn reset' type='buttom'>Reset</button>
+    <button class='moral-btn randomize' type='button'>Randomize</button>
+  </footer>
 </form>
