@@ -1,6 +1,7 @@
 {
   "MC": {
-    "ViewerTitle": "Moral Code",
+    "MoralCode": "Moral Code",
+    "ViewerTitle": "{actor}'s Moral Code",
     "Selfish": {
       "Selfish": "Selfish",
       "Hint": "acts in their own self-interesst"
@@ -8,6 +9,47 @@
     "Selfless": {
       "Selfless": "Selfless",
       "Hint": "puts others' needs before their own"
-    }
+    },
+    "Practical": {
+      "Practical": "Practical",
+      "Hint": "pursues feasible and useful goals"
+    },
+    "Idealistic": {
+      "Idealistic": "Idealistic",
+      "Hint": "pursues high and noble principles"
+    },
+    "Capricious": {
+      "Capricious": "Capricious",
+      "Hint": "is unpredictable, fickle, may cheat or mislead"
+    },
+    "Responsible": {
+      "Responsible": "Responsible",
+      "Hint": "is honest, reliable, uses sound judgement"
+    },
+    "Lawful": {
+      "Lawful": "Lawful",
+      "Hint": "follows rules and beleves in the good of authority"
+    },
+    "Anarchic": {
+      "Anarchic": "Anarchic",
+      "Hint": "does not recognize authority, dislikes laws and rules"
+    },
+    "Tolerant": {
+      "Tolerant": "Tolerant",
+      "Hint": "respects the differences among people"
+    },
+    "Intolerant": {
+      "Intolerant": "Intolerant",
+      "Hint": "dislikes those who differ from their expectations"
+    },
+    "Progressive": {
+      "Progressive": "Progressive",
+      "Hint": "favors change and progress"
+    },
+    "Traditional": {
+      "Traditional": "Traditional",
+      "Hint": "preserves old ways of life"
+    },
+    "ColorConfigTitle": "Moral Code - Color Config"
   }
 }
