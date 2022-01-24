@@ -7,8 +7,8 @@ export class MoralCodeViewer extends FormApplication {
     return foundry.utils.mergeObject(super.defaultOptions, {
       template: 'modules/moral-code/templates/viewer.hbs',
       classes: ['moral-code'],
-      width: 700,
-      height: 700,
+      width: 600,
+      height: 'auto',
       resizable: false,
     });
   }
@@ -25,6 +25,10 @@ export class MoralCodeViewer extends FormApplication {
     return this.object;
   }
 
+  get moralCode() {
+    return this.actor.getFlag('moral-code', 'code');
+  }
+
   activateListeners(html) {
     super.activateListeners(html);
     html.find('footer .randomize').on('click', this.randomizeMoralCode.bind(this));
@@ -33,7 +37,7 @@ export class MoralCodeViewer extends FormApplication {
 
   async getData() {
     const data = super.getData();
-    data.code = this.actor.getFlag('moral-code', 'code');
+    data.code = this.moralCode;
     return data;
   }
 

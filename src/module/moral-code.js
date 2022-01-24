@@ -19,11 +19,10 @@ import { MoralCodeViewer } from './MoralCodeViewer.js';
 Hooks.once('init', () => {
   console.log('moral-code | Initializing moral-code');
 
-  game.moral = {
+  // Assign custom classes and constants here
+  game['moral-code'] = {
     MoralCodeViewer,
   };
-
-  // Assign custom classes and constants here
 
   // Register custom module settings
   registerSettings();
@@ -31,7 +30,8 @@ Hooks.once('init', () => {
   // Preload Handlebars templates
   preloadTemplates();
 
-  // Register custom sheets (if any)
+  //register custom Handlebars helpers
+  registerCustomHelpers();
 });
 
 // Setup module
@@ -55,11 +55,18 @@ Hooks.on('getActorSheetHeaderButtons', onGetActorSheetHeaderButtons);
  */
 function onGetActorSheetHeaderButtons(sheet, buttons) {
   buttons.unshift({
-    label: 'MC.ViewerTitle',
+    label: 'MC.MoralCode',
     class: 'open-moral-code',
     icon: 'fas fa-compass',
     onclick: () => {
       new MoralCodeViewer(sheet.actor).render(true);
     },
+  });
+}
+
+function registerCustomHelpers() {
+  Handlebars.registerHelper('radioCheck', function (value, test) {
+    if (value === undefined || value === null) return '';
+    return value == test ? 'checked' : '';
   });
 }
