@@ -29,6 +29,7 @@
     "postinstall": "husky install"
   },
   "devDependencies": {
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.242.0",
     "@typhonjs-fvtt/eslint-config-foundry.js": "^0.8.0",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
