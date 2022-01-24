@@ -10,7 +10,6 @@ export class MoralCodeViewer extends FormApplication {
       width: 700,
       height: 700,
       resizable: false,
-      closeOnSubmit: false,
     });
   }
 
@@ -55,7 +54,6 @@ export class MoralCodeViewer extends FormApplication {
       'tolerant-intolerant': await this.randomMoral(),
       'progressive-traditional': await this.randomMoral(),
     };
-    console.log(code);
     await this.actor.setFlag('moral-code', 'code', code);
     return this.render(true);
   }
