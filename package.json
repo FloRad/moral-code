@@ -2,14 +2,14 @@
   "private": true,
   "name": "moral-compass",
   "description": "",
-  "license": "",
+  "license": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/LICENSE",
   "homepage": "",
   "repository": {
     "type": "git",
     "url": ""
   },
   "bugs": {
-    "url": ""
+    "url": "https://gitlab.com/florad-foundry/moral-code/-/issues"
   },
   "contributors": [
     {

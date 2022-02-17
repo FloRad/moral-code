@@ -14,6 +14,7 @@
 import { registerSettings } from './settings.js';
 import { preloadTemplates } from './preloadTemplates.js';
 import { MoralCodeViewer } from './MoralCodeViewer.js';
+import { getMoralCodeSummary } from './utils.js';
 
 // Initialize module
 Hooks.once('init', () => {
@@ -21,6 +22,7 @@ Hooks.once('init', () => {
 
   // Assign custom classes and constants here
   game['moral-code'] = {
+    getMoralCodeSummary,
     MoralCodeViewer,
   };
 
