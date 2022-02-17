@@ -29,10 +29,10 @@
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "license": "",
-  "readme": "",
-  "bugs": "",
-  "changelog": "",
+  "license": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/LICENSE",
+  "readme": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/README.md",
+  "bugs": "https://gitlab.com/florad-foundry/moral-code/-/issues",
+  "changelog": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/CHANGELOG.md",
   "system": [],
   "library": false
 }
