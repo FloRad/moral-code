@@ -1,8 +1,8 @@
 .moral-code {
   .window-content {
     background-image: none;
-    background-color: var(--moral-bg-color);
-    font-family: var(--moral-fonts-primary);
+    background-color: var(--main-bg-color);
+    font-family: var(--fonts-primary);
   }
 
   .footer {
@@ -19,8 +19,8 @@
   .hint-box {
     justify-self: center;
     align-self: center;
-    background-color: var(--moral-hint-box-bg);
-    color: var(--moral-font-color);
+    background-color: var(--hint-bg-color);
+    color: var(--hint-font-color);
     border-radius: 1em;
     padding: 0.5em;
   }
@@ -32,16 +32,16 @@
     .labels {
       display: flex;
       justify-content: space-between;
-      color: var(--moral-hint-box-bg);
+      color: var(--selection-label-font-color);
       span {
         font-size: 20px;
       }
     }
 
     .options {
-      background-color: var(--moral-selection-bg-color);
-      font-family: var(--moral-fonts-secondary);
-      color: var(--moral-hint-box-bg);
+      background-color: var(--selection-bg-color);
+      font-family: var(--fonts-secondary);
+      color: var(--hint-bg-color);
       font-size: 16px;
       border-radius: 25px;
       height: 1.25em;
@@ -54,7 +54,7 @@
 
       label {
         cursor: pointer;
-        color: var(--moral-font-color);
+        color: var(--selection-font-color);
       }
 
       input[type='radio'] {
@@ -66,38 +66,103 @@
       }
 
       input[type='radio']:checked + label {
-        text-shadow: 0 0 10px var(--moral-bg-color);
-        color: var(--moral-font-color);
+        text-shadow: 0 0 10px var(--selection-font-color);
+        color: var(--selection-font-color);
         font-weight: bold;
       }
     }
   }
 
   .moral-btn {
-    font-family: var(--moral-fonts-secondary);
+    font-family: var(--fonts-secondary);
     font-size: 18px;
     border: none;
     border-radius: 25px;
     margin: 0 0.5em;
-    background-color: var(--moral-button-bg);
-    color: var(--moral-btn-font-color);
+    background-color: var(--btn-bg-color);
+    color: var(--btn-font-color);
 
     &:focus,
     &:hover {
-      box-shadow: 0 0 8px var(--moral-button-bg);
+      box-shadow: 0 0 8px var(--btn-bg-color);
     }
   }
 }
 
-.moral-code.classic {
-  //variables
-  --moral-bg-color: #9ad6d4;
-  --moral-selection-bg-color: #f37163;
-  --moral-hint-box-bg: #fef7c3;
-  --moral-button-bg: #515151;
-  --moral-font-color: var(--moral-button-bg);
-  --moral-btn-font-color: var(--moral-hint-box-bg);
+//*********
+// THEMES
+//*********
 
-  --moral-fonts-primary: 'Times New Roman', Times, serif;
-  --moral-fonts-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//Classic
+.moral-code.classic {
+  --light-blue: #9ad6d4;
+  --salmon-pink: #f37163;
+  --cream: #fef7c3;
+  --grey: #515151;
+
+  --main-bg-color: var(--light-blue);
+  --fonts-primary: 'Times New Roman', Times, serif;
+  --fonts-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --hint-bg-color: var(--cream);
+  --hint-font-color: var(--grey);
+
+  --btn-bg-color: var(--grey);
+  --btn-font-color: var(--cream);
+
+  --selection-bg-color: var(--salmon-pink);
+  --selection-font-color: var(--cream);
+  --selection-label-font-color: var(--grey);
+}
+
+//Solarized
+.moral-code.solarized {
+  --base3: #fdf6e3;
+  --base03: #002b36;
+  --orange: #cb4b16;
+  --violet: #6c71c4;
+
+  --main-bg-color: var(--base3);
+  --fonts-primary: 'Times New Roman', Times, serif;
+  --fonts-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --hint-bg-color: var(--base03);
+  --hint-font-color: var(--base3);
+
+  --btn-bg-color: var(--orange);
+  --btn-font-color: var(--base3);
+
+  --selection-bg-color: var(--violet);
+  --selection-font-color: var(--base3);
+  --selection-label-font-color: var(--base03);
+
+  .hint-box {
+    text-align: center;
+  }
+}
+
+//Solarized Dark
+.moral-code.solarized-dark {
+  --base3: #fdf6e3;
+  --base03: #002b36;
+  --orange: #cb4b16;
+  --violet: #6c71c4;
+
+  --main-bg-color: var(--base03);
+  --fonts-primary: 'Times New Roman', Times, serif;
+  --fonts-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --hint-bg-color: var(--base3);
+  --hint-font-color: var(--base03);
+
+  --btn-bg-color: var(--orange);
+  --btn-font-color: var(--base3);
+
+  --selection-bg-color: var(--violet);
+  --selection-font-color: var(--base3);
+  --selection-label-font-color: var(--base3);
+
+  .hint-box {
+    text-align: center;
+  }
 }
