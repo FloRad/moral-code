@@ -56,6 +56,7 @@ Hooks.on('getActorSheetHeaderButtons', onGetActorSheetHeaderButtons);
  * @param {Array<HeaderButton>} buttons
  */
 function onGetActorSheetHeaderButtons(sheet, buttons) {
+  if (!sheet.actor.isOwner) return;
   buttons.unshift({
     label: 'MC.MoralCode',
     class: 'open-moral-code',

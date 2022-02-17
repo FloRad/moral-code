@@ -8,5 +8,6 @@ export function registerSettings() {
     choices: {
       classic: 'MC.Theme.Classic',
     },
+    default: 'classic',
   });
 }
