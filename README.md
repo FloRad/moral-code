@@ -88,7 +88,7 @@ This project is being developed under the terms of the
 
 Repository content licensed under [Apache License 2.0]
 
-[Dame GM's Blog Post]: https://damegm.wordpress.com/2015/07/29/an-alternative-to-alignment/
-[League Basic JS Module Template]: https://github.com/League-of-Foundry-Developers/FoundryVTT-Module-Template
-[LIMITED LICENSE AGREEMENT FOR MODULE DEVELOPMENT]: https://foundryvtt.com/article/license/
-[Apache License 2.0]: https://gitlab.com/florad-foundry/moral-code/-/blob/main/LICENSE
+[dame gm's blog post]: https://damegm.wordpress.com/2015/07/29/an-alternative-to-alignment/
+[league basic js module template]: https://github.com/League-of-Foundry-Developers/FoundryVTT-Module-Template
+[limited license agreement for module development]: https://foundryvtt.com/article/license/
+[apache license 2.0]: https://github.com/FloRad/moral-code/blob/main/LICENSE
