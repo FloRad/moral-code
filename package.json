@@ -3,10 +3,10 @@
   "name": "moral-compass",
   "description": "",
   "license": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/LICENSE",
-  "homepage": "",
+  "homepage": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://gitlab.com/florad-foundry/moral-code.git"
   },
   "bugs": {
     "url": "https://gitlab.com/florad-foundry/moral-code/-/issues"
