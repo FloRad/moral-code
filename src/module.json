@@ -1,7 +1,7 @@
 {
   "name": "moral-code",
   "title": "Moral Code",
-  "description": "A module to bring the Moral Code concept developed by Dame GM to Foundry VTT",
+  "description": "A module to bring the Moral Code concept developed by <a href='https://damegm.wordpress.com/2015/07/29/an-alternative-to-alignment/'>Dame GM</a> to Foundry VTT",
   "version": "This is auto replaced",
   "author": "FloRad",
   "authors": [
@@ -29,10 +29,10 @@
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "license": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/LICENSE",
-  "readme": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/README.md",
-  "bugs": "https://gitlab.com/florad-foundry/moral-code/-/issues",
-  "changelog": "https://gitlab.com/florad-foundry/moral-code/-/blob/main/CHANGELOG.md",
+  "license": "https://github.com/FloRad/moral-code/blob/main/LICENSE",
+  "readme": "https://github.com/FloRad/moral-code#readme",
+  "bugs": "https://github.com/FloRad/moral-code/issues",
+  "changelog": "https://github.com/FloRad/moral-code/releases",
   "system": [],
   "library": false
 }
