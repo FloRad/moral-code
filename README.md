@@ -78,13 +78,8 @@ you need to run the above command in an administrator terminal for it to work.
 
 ### Creating a release
 
-In order to create a versioned release, simply create / push a new tag that follows the pattern
-`v<number>.<number>.<number>`. This triggers a pipeline run that automatically builds the package and creates a release
-that has a `module.zip` / `system.zip` and a `module.json` / `system.json` attached to it. These files are set up so
-that they work in the same way as in the [League Basic JS Module Template], so you can follow the instructions given
-there to list the release on the Foundry VTT package admin page.
-
-If you want to provide release notes, you can then edit the created release to add a description.
+The workflow works basically the same as the workflow of the [League Basic JS Module Template], please follow the
+instructions given there.
 
 ## Licensing
 
@@ -93,8 +88,7 @@ This project is being developed under the terms of the
 
 Repository content licensed under [Apache License 2.0]
 
-[dame gm's blog post]: https://damegm.wordpress.com/2015/07/29/an-alternative-to-alignment/
-[releases page]: https://gitlab.com/florad-foundry/moral-code/-/releases
-[league basic js module template]: https://github.com/League-of-Foundry-Developers/FoundryVTT-Module-Template
-[limited license agreement for module development]: https://foundryvtt.com/article/license/
-[apache license 2.0]: https://gitlab.com/florad-foundry/moral-code/-/blob/main/LICENSE
+[Dame GM's Blog Post]: https://damegm.wordpress.com/2015/07/29/an-alternative-to-alignment/
+[League Basic JS Module Template]: https://github.com/League-of-Foundry-Developers/FoundryVTT-Module-Template
+[LIMITED LICENSE AGREEMENT FOR MODULE DEVELOPMENT]: https://foundryvtt.com/article/license/
+[Apache License 2.0]: https://gitlab.com/florad-foundry/moral-code/-/blob/main/LICENSE
