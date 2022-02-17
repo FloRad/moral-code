@@ -2,9 +2,11 @@
   "MC": {
     "MoralCode": "Moral Code",
     "ViewerTitle": "{actor}'s Moral Code",
+    "AlmostAlways": "Almost always {action}",
+    "Usually": "Usually {action}",
     "Selfish": {
       "Selfish": "Selfish",
-      "Hint": "acts in their own self-interesst"
+      "Hint": "acts in their own self-interest"
     },
     "Selfless": {
       "Selfless": "Selfless",
@@ -28,7 +30,7 @@
     },
     "Lawful": {
       "Lawful": "Lawful",
-      "Hint": "follows rules and beleves in the good of authority"
+      "Hint": "follows rules and believes in the good of authority"
     },
     "Anarchic": {
       "Anarchic": "Anarchic",
@@ -50,6 +52,12 @@
       "Traditional": "Traditional",
       "Hint": "preserves old ways of life"
     },
-    "ColorConfigTitle": "Moral Code - Color Config"
+    "Theme": {
+      "Theme": "Theme",
+      "Hint": "Choose which color theme to use",
+      "Classic": "Classic",
+      "Solarized": "Solarized",
+      "SolarizedDark": "Solarized Dark"
+    }
   }
 }

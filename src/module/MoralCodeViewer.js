@@ -4,9 +4,10 @@ export class MoralCodeViewer extends FormApplication {
   }
 
   static get defaultOptions() {
+    const theme = game.settings.get('moral-code', 'theme');
     return foundry.utils.mergeObject(super.defaultOptions, {
       template: 'modules/moral-code/templates/viewer.hbs',
-      classes: ['moral-code'],
+      classes: ['moral-code', theme],
       width: 600,
       height: 'auto',
       resizable: false,
