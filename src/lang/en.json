@@ -54,7 +54,7 @@
     },
     "Theme": {
       "Theme": "Theme",
-      "Hint": "Choose which color theme to use",
+      "Hint": "Choose which color theme to use for the Moral Code viewer window.",
       "Classic": "Classic",
       "Solarized": "Solarized",
       "SolarizedDark": "Solarized Dark"
