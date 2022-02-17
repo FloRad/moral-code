@@ -1,10 +1,18 @@
-# moral-compass
+# Moral Code
 
-Please add your description here.
+Moral Code is an implementation of [Dame GM's Blog Post] from 2015, adding an alternative to the classic 3x3 Alignment grid to Foundry VTT.
+
+Currently the module adds itself as a Header Button to Actor Sheets for GMs and the actors' owners
+
+##To Do:
+
+- [x] Theming support
+- [ ] System registration API. Having a header button is okay, but replacing existing alignment inputs or adding a button to an existing sheet would be preferable
+- [ ] Add hooks for theme and sheet registration
 
 ## Installation
 
-Please add your installation instructions here.
+Look at the [Releases Page] for manual installation instructions
 
 ## Development
 
@@ -83,10 +91,10 @@ If you want to provide release notes, you can then edit the created release to a
 This project is being developed under the terms of the
 [LIMITED LICENSE AGREEMENT FOR MODULE DEVELOPMENT] for Foundry Virtual Tabletop.
 
-Please add your licensing information here. Add your chosen license as
-`LICENSE` file to the project root and mention it here.  If you don't know which
-license to choose, take a look at [Choose an open source license].
+Repository content licensed under [Apache License 2.0]
 
-[League Basic JS Module Template]: https://github.com/League-of-Foundry-Developers/FoundryVTT-Module-Template
-[LIMITED LICENSE AGREEMENT FOR MODULE DEVELOPMENT]: https://foundryvtt.com/article/license/
-[Choose an open source license]: https://choosealicense.com/
+[dame gm's blog post]: https://damegm.wordpress.com/2015/07/29/an-alternative-to-alignment/
+[releases page]: https://gitlab.com/florad-foundry/moral-code/-/releases
+[league basic js module template]: https://github.com/League-of-Foundry-Developers/FoundryVTT-Module-Template
+[limited license agreement for module development]: https://foundryvtt.com/article/license/
+[apache license 2.0]: https://gitlab.com/florad-foundry/moral-code/-/blob/main/LICENSE
