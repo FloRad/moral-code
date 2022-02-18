@@ -18,6 +18,12 @@ Look at the [Releases Page] for manual installation instructions
 
 ## Development
 
+### ToDo
+
+- [ ] Support for the SWADE system
+- [ ] Make selection tracks more accessible
+- [ ] Expand sheet registration possibilities
+
 ### Prerequisites
 
 In order to build this module, recent versions of `node` and `npm` are
