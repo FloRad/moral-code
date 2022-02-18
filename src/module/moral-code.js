@@ -10,24 +10,14 @@
  * 					 determines how others may use and modify your module.
  */
 
-// Import JavaScript modules
 import { registerSettings } from './settings.js';
 import { preloadTemplates } from './preloadTemplates.js';
 import { MoralCodeViewer } from './MoralCodeViewer.js';
-import { getMoralCodeSummary } from './utils.js';
+import * as api from './api.js';
 
 // Initialize module
 Hooks.once('init', () => {
   console.log('moral-code | Initializing moral-code');
-
-  // Assign custom classes and constants here
-  game['moral-code'] = {
-    getMoralCodeSummary,
-    MoralCodeViewer,
-  };
-
-  // Register custom module settings
-  registerSettings();
 
   // Preload Handlebars templates
   preloadTemplates();
@@ -38,13 +28,14 @@ Hooks.once('init', () => {
 
 // Setup module
 Hooks.once('setup', () => {
-  // Do anything after initialization but before
-  // ready
-});
+  // Do anything after initialization but before ready
 
-// When ready
-Hooks.once('ready', () => {
-  // Do anything once the module is ready
+  //set up the API here
+  game.modules.get('moral-code').api = api.api;
+  Hooks.callAll('moralCodeReady', game.modules.get('moral-code').api);
+
+  // Register custom module settings
+  registerSettings();
 });
 
 // Add any additional hooks if necessary
@@ -68,6 +59,7 @@ function onGetActorSheetHeaderButtons(sheet, buttons) {
 }
 
 function registerCustomHelpers() {
+  //reading you 5 by 5
   Handlebars.registerHelper('radioCheck', function (value, test) {
     if (value === undefined || value === null) return '';
     return value == test ? 'checked' : '';
