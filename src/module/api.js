@@ -107,12 +107,14 @@ function registerTheme(theme) {
 function getMoralCodeSummary(actor, post = false) {
   const code = actor.getFlag('moral-code', 'code') ?? {};
   const listItems = [];
+  //construct the list items
   for (const [key, value] of Object.entries(code)) {
     const leaning = getLeaning(key, value);
     const strength = getLeaningStrength(value);
     const text = game.i18n.format(strength, { action: game.i18n.localize(`MC.${leaning}.Hint`) });
     listItems.push(`<li>${game.i18n.localize(`MC.${leaning}.${leaning}`)}: ${text}</li>`);
   }
+  //wrap the list items and return them
   const content = `<ul>\n\t${listItems.join('\n\t')}\n</ul>`;
   if (!post) return content;
   return ChatMessage.create({
