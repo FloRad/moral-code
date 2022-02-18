@@ -83,7 +83,7 @@ function onRenderActorSheet(sheet, html, _data) {
  * @param {Array<HeaderButton>} buttons
  */
 function onGetActorSheetHeaderButtons(sheet, buttons) {
-  const sheetRegistered = !!api.getSheetData(sheet.constructor.name);
+  const sheetRegistered = !!api.getSheetRegistration(sheet.constructor.name);
   //return early if the sheet is properly registered since we don't need the header button
   if (sheetRegistered) return;
   // only add the header button if the user is an owner (GMs are always owners)

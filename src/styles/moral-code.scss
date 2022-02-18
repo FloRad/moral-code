@@ -176,7 +176,7 @@
   .grid-under.gu-1 {
     display: block;
     pointer-events: all;
-    .moral-code {
+    .btn-moral-code {
       background-color: red;
     }
   }
@@ -184,16 +184,28 @@
 
 //dnd5e
 .dnd5e.sheet .sheet-header .summary li {
-  .moral-code {
+  .btn-moral-code {
     display: block;
     height: 24px;
-    line-height: 24px;
+    line-height: 18px;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
     margin: 0;
+    padding: 1px 3px;
+    background: none;
+    color: #191813;
+    cursor: pointer;
+    border: 1px solid transparent;
+    &:focus,
+    &:hover {
+      border: 1px solid #111;
+    }
   }
 }
 
 //pf2e
-.sheet.pc .alignment .moral-code {
+.sheet.pc .alignment .btn-moral-code {
   border: none;
   background: none;
   height: 20px;
@@ -201,4 +213,5 @@
   margin: 0 0.5em;
   font-family: var(--body-serif);
   font-weight: 700;
+  cursor: pointer;
 }

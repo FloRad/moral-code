@@ -8,7 +8,7 @@ export const api = {
       system: 'swade',
       sheetClassName: 'CharacterSheet',
       target: '.swade-official .grid-under.gu-1',
-      classes: ['moral-code'],
+      classes: ['btn-moral-code'],
       insert: true,
       prepend: false,
     },
@@ -16,13 +16,13 @@ export const api = {
       system: 'dnd5e',
       sheetClassName: 'ActorSheet5eCharacter',
       target: 'input[name="data.details.alignment"]',
-      classes: ['moral-code'],
+      classes: ['btn-moral-code'],
     },
     {
       system: 'pf2e',
       sheetClassName: 'CharacterSheetPF2e',
       target: '.alignment .bio-alignment.pf-value.pf-small',
-      classes: ['bio-alignment', 'pf-value', 'pf-small', 'moral-code'],
+      classes: ['bio-alignment', 'pf-value', 'pf-small', 'btn-moral-code'],
     },
   ],
   _themes: [
@@ -41,7 +41,7 @@ export const api = {
  * @param {boolean} [sheet.insert] - If `true`, the Moral Code button will be inserted as a standalone button instead of replacing an element
  * @param {boolean} [sheet.prepend] - If `true` the Moral Code button will be prepended to the target on insert, otherwise it is appended
  */
-function registerSheet(sheet = { classes: ['moral-code'], insert: false, prepend: false }) {
+function registerSheet(sheet = { classes: ['btn-moral-code'], insert: false, prepend: false }) {
   game.modules.get('moral-code')?.api?._sheets.push(sheet);
   const isDebugging = game.modules.get('_dev-mode')?.api?.getPackageDebugValue('moral-code');
   if (isDebugging) {
