@@ -7,14 +7,14 @@ export const api = {
   getSheetRegistration,
   MoralCodeViewer,
   _sheets: [
-    {
-      system: 'swade',
-      sheetClassName: 'CharacterSheet',
-      target: '.swade-official .grid-under.gu-1',
-      classes: ['btn-moral-code'],
-      insert: true,
-      prepend: false,
-    },
+    // {
+    //   system: 'swade',
+    //   sheetClassName: 'CharacterSheet',
+    //   target: '.swade-official .grid-under.gu-1',
+    //   classes: ['btn-moral-code'],
+    //   insert: true,
+    //   prepend: false,
+    // },
     {
       system: 'dnd5e',
       sheetClassName: 'ActorSheet5eCharacter',
