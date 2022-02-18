@@ -101,8 +101,8 @@ function registerTheme(theme) {
 /**
  * Looks at an actor and constructs the summary text for their moral code
  * @param {Actor} actor The actor to look at
- * @param {boolean} post Whether to post the summary to chat;
- * @returns {Promise<ChatMessage> | string |} If post is `true` it returns a promise that resolves to the generated chat message, otherwise it returns the generated string
+ * @param {boolean} [post=false] Whether to post the summary to chat;
+ * @returns {Promise<ChatMessage> | string} If post is `true` it returns a promise that resolves to the generated chat message, otherwise it returns the generated string
  */
 function getMoralCodeSummary(actor, post = false) {
   const code = actor.getFlag('moral-code', 'code') ?? {};
@@ -113,15 +113,13 @@ function getMoralCodeSummary(actor, post = false) {
     const text = game.i18n.format(strength, { action: game.i18n.localize(`MC.${leaning}.Hint`) });
     listItems.push(`<li>${game.i18n.localize(`MC.${leaning}.${leaning}`)}: ${text}</li>`);
   }
-  const content = `<ul>${listItems.join('\n')}</ul>`;
-  if (post) {
-    return ChatMessage.create({
-      content: content,
-      speaker: { actor: actor },
-      type: CONST.CHAT_MESSAGE_TYPES.OTHER,
-    });
-  }
-  return content;
+  const content = `<ul>\n\t${listItems.join('\n\t')}\n</ul>`;
+  if (!post) return content;
+  return ChatMessage.create({
+    content: content,
+    speaker: { actor: actor },
+    type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+  });
 }
 
 /**
