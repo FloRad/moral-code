@@ -2,12 +2,9 @@
  * This is your JavaScript entry file for Foundry VTT.
  * Register custom settings, sheets, and constants using the Foundry API.
  * Change this heading to be more descriptive to your module, or remove it.
- * Author: [your name]
- * Content License: [copyright and-or license] If using an existing system
- * 					you may want to put a (link to a) license or copyright
- * 					notice here (e.g. the OGL).
- * Software License: [your license] Put your desired license here, which
- * 					 determines how others may use and modify your module.
+ * Author: FloRad
+ * Content License: Heck if I know. Should be Fair Use I guess
+ * Software License: Apache License 2.0
  */
 
 import { registerSettings } from './settings.js';
@@ -17,7 +14,7 @@ import * as api from './api.js';
 
 // Initialize module
 Hooks.once('init', () => {
-  console.log('moral-code | Initializing moral-code');
+  console.log('moral-code', '|', 'Initializing moral-code');
 
   // Preload Handlebars templates
   preloadTemplates();
@@ -38,8 +35,11 @@ Hooks.once('setup', () => {
   registerSettings();
 });
 
-// Add any additional hooks if necessary
+/**
+ * Hooks
+ */
 Hooks.on('getActorSheetHeaderButtons', onGetActorSheetHeaderButtons);
+Hooks.on('devModeReady', onDevModeReady);
 
 /**
  *
@@ -56,6 +56,10 @@ function onGetActorSheetHeaderButtons(sheet, buttons) {
       new MoralCodeViewer(sheet.actor).render(true);
     },
   });
+}
+
+function onDevModeReady({ registerPackageDebugFlag }) {
+  registerPackageDebugFlag('moral-code');
 }
 
 function registerCustomHelpers() {
