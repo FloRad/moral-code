@@ -21,8 +21,8 @@ export const api = {
     {
       system: 'pf2e',
       sheetClassName: 'CharacterSheetPF2e',
-      target: 'select[name="data.details.alignment.value"]',
-      classes: ['moral-code'],
+      target: '.alignment .bio-alignment.pf-value.pf-small',
+      classes: ['bio-alignment', 'pf-value', 'pf-small', 'moral-code'],
     },
   ],
   _themes: [
