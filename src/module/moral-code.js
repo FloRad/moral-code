@@ -10,7 +10,7 @@
 import { registerSettings } from './settings.js';
 import { preloadTemplates } from './preloadTemplates.js';
 import { MoralCodeViewer } from './MoralCodeViewer.js';
-import * as api from './api.js';
+import { api } from './api.js';
 
 // Initialize module
 Hooks.once('init', () => {
@@ -28,7 +28,7 @@ Hooks.once('setup', () => {
   // Do anything after initialization but before ready
 
   //set up the API here
-  game.modules.get('moral-code').api = api.api;
+  game.modules.get('moral-code').api = api;
   Hooks.callAll('moralCodeReady', game.modules.get('moral-code').api);
 
   // Register custom module settings
@@ -38,28 +38,65 @@ Hooks.once('setup', () => {
 /**
  * Hooks
  */
+Hooks.on('renderActorSheet', onRenderActorSheet);
 Hooks.on('getActorSheetHeaderButtons', onGetActorSheetHeaderButtons);
 Hooks.on('devModeReady', onDevModeReady);
 
+function onDevModeReady({ registerPackageDebugFlag }) {
+  registerPackageDebugFlag('moral-code');
+}
+
 /**
- *
+ * Add the Moral Code button to any registered actor sheet
+ * @param {ActorSheet} sheet
+ * @param {JQuery<HTMLElement>} html
+ * @param {*} data
+ */
+function onRenderActorSheet(sheet, html, _data) {
+  const sheetRegistration = game.modules.get('moral-code')?.api?.getSheetData(sheet.constructor.name);
+
+  //return early if the sheet isn't registered
+  if (!sheetRegistration) return;
+
+  //create the button element and add the relevant information such as class and click listener
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.innerText = game.i18n.localize('MC.MoralCode');
+  button.title = game.i18n.format('MC.ViewerTitle', { actor: sheet.actor.name });
+  button.classList.add(...sheetRegistration.classes);
+  button.addEventListener('click', () => new MoralCodeViewer(sheet.actor).render(true));
+
+  //add the button to the sheet
+  if (sheetRegistration.insert) {
+    if (sheetRegistration.prepend) {
+      $(sheetRegistration.target).prepend(button);
+    } else {
+      $(sheetRegistration.target).append(button);
+    }
+  }
+  html.find(sheetRegistration.target).replaceWith(button);
+}
+
+/**
+ * Add the Moral Code viewer Header button to the actor sheet header buttons, but only if the actorsheet isn't already registered
  * @param {ActorSheet} sheet
  * @param {Array<HeaderButton>} buttons
  */
 function onGetActorSheetHeaderButtons(sheet, buttons) {
-  if (!sheet.actor.isOwner) return;
-  buttons.unshift({
-    label: 'MC.MoralCode',
-    class: 'open-moral-code',
-    icon: 'fas fa-compass',
-    onclick: () => {
-      new MoralCodeViewer(sheet.actor).render(true);
-    },
-  });
-}
-
-function onDevModeReady({ registerPackageDebugFlag }) {
-  registerPackageDebugFlag('moral-code');
+  const sheetRegistered = !!game.modules.get('moral-code')?.api?.getSheetData(sheet.constructor.name);
+  //return early if the sheet is properly registered since we don't need the header button
+  if (sheetRegistered) return;
+  // only add the header button if the user is an owner (GMs are always owners)
+  if (sheet.actor.isOwner) {
+    buttons.unshift({
+      label: 'MC.MoralCode',
+      class: 'open-moral-code',
+      icon: 'fas fa-compass',
+      onclick: () => {
+        new MoralCodeViewer(sheet.actor).render(true);
+      },
+    });
+  }
 }
 
 function registerCustomHelpers() {

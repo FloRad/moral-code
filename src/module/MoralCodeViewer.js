@@ -10,6 +10,7 @@ export class MoralCodeViewer extends FormApplication {
       width: 600,
       height: 'auto',
       resizable: false,
+      id: 'moral-code-viewer',
     });
   }
 
@@ -71,7 +72,7 @@ export class MoralCodeViewer extends FormApplication {
   }
 
   /**
-   * @returns {number} a random value for a moral code secton
+   * @returns {number} a random value for a moral code section
    */
   async randomMoral() {
     const formula = '1d4';

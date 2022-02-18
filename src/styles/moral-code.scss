@@ -62,7 +62,7 @@
       }
 
       input[type='radio'] + label {
-        padding: 0.5em;
+        margin: 0.5em;
       }
 
       input[type='radio']:checked + label {
@@ -90,7 +90,7 @@
 }
 
 //*********
-// THEMES
+// Themes
 //*********
 
 //Classic
@@ -164,5 +164,42 @@
 
   .hint-box {
     text-align: center;
+  }
+}
+
+//*********
+// System specific button classes
+//*********
+
+//swade
+.swade-official.sheet {
+  .grid-under.gu-1 {
+    display: block;
+    pointer-events: all;
+    .moral-code {
+      background-color: red;
+    }
+  }
+}
+
+//dnd5e
+.dnd5e.sheet .sheet-header .summary li {
+  .moral-code {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    margin: 0;
+  }
+}
+
+//pf2e
+.sheet.pc {
+  .alignment {
+    .moral-code {
+      border: none;
+      height: 24px;
+      background: none;
+      line-height: 24px;
+    }
   }
 }

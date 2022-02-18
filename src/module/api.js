@@ -2,7 +2,29 @@ export const api = {
   getMoralCodeSummary,
   registerTheme,
   registerSheet,
-  _sheets: [],
+  getSheetData,
+  _sheets: [
+    {
+      system: 'swade',
+      sheetClassName: 'CharacterSheet',
+      target: '.swade-official .grid-under.gu-1',
+      classes: ['moral-code'],
+      insert: true,
+      prepend: false,
+    },
+    {
+      system: 'dnd5e',
+      sheetClassName: 'ActorSheet5eCharacter',
+      target: 'input[name="data.details.alignment"]',
+      classes: ['moral-code'],
+    },
+    {
+      system: 'pf2e',
+      sheetClassName: 'CharacterSheetPF2e',
+      target: 'select[name="data.details.alignment.value"]',
+      classes: ['moral-code'],
+    },
+  ],
   _themes: [
     { class: 'solarized', label: 'MC.Theme.Solarized' },
     { class: 'solarized-dark', label: 'MC.Theme.SolarizedDark' },
@@ -11,19 +33,34 @@ export const api = {
 
 /**
  * Register a sheet to the API, so that Moral Code an add itself onto the sheet
- * @param {Object} sheet - The sheet info to register
+ * @param {SheetRegistrationData} sheet - The sheet info to register
+ * @param {string} sheet.system - The system that this sheet is used in
  * @param {string} sheet.sheetClass - The sheet class to look for
  * @param {string} sheet.target - The selector used to select the element that will be replaced by the moral code button
- * @param {string} sheet.class - The class(es) to apply to the button to make it look good
+ * @param {string[]} [sheet.classes] - The class(es) to apply to the button to make it look good
  * @param {boolean} [sheet.insert] - If `true`, the Moral Code button will be inserted as a standalone button instead of replacing an element
+ * @param {boolean} [sheet.prepend] - If `true` the Moral Code button will be prepended to the target on insert, otherwise it is appended
  */
-// eslint-disable-next-line no-unused-vars
-function registerSheet(sheet) {
+function registerSheet(sheet = { classes: ['moral-code'], insert: false, prepend: false }) {
   game.modules.get('moral-code')?.api?._sheets.push(sheet);
   const isDebugging = game.modules.get('_dev-mode')?.api?.getPackageDebugValue('moral-code');
   if (isDebugging) {
-    console.debug('moral-code', '|', `Registered sheet ${sheet.sheetClass}`, sheet);
+    console.debug('moral-code', '|', `Registered sheet ${sheet.sheetClassName}`, sheet);
   }
+}
+
+/**
+ *
+ * @param {string} sheet the class name of the sheet we're looking for
+ * @returns {SheetRegistrationData | undefined }
+ */
+function getSheetData(sheet) {
+  const sheets = game.modules.get('moral-code')?.api?._sheets;
+  const isDebugging = game.modules.get('_dev-mode')?.api?.getPackageDebugValue('moral-code');
+  if (isDebugging) {
+    console.debug('moral-code', '|', 'Looking for sheet ', sheet, 'in system', game.system.id);
+  }
+  return sheets.find((s) => s.system === game.system.id && s.sheetClassName === sheet);
 }
 
 /**
@@ -116,3 +153,14 @@ function getLeaning(key, value) {
   }
   return leaning.capitalize();
 }
+
+/**
+ * @typedef SheetRegistrationData
+ * @type {object}
+ * @property {string} sheet.system - The system that this sheet is used in
+ * @property {string} sheet.sheetClassName - The sheet class to look for
+ * @property {string} sheet.target - The selector used to select the element that will be replaced by the moral code button
+ * @property {string[]} sheet.classes - The class(es) to apply to the button to make it look good
+ * @property {boolean} [sheet.insert] - If `true`, the Moral Code button will be inserted as a standalone button instead of replacing an element
+ * @property {boolean} [sheet.prepend] - If `true` the Moral Code button will be prepended to the target on insert, otherwise it is appended
+ */
