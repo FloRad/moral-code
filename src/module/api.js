@@ -1,8 +1,11 @@
+import { MoralCodeViewer } from './MoralCodeViewer';
+
 export const api = {
   getMoralCodeSummary,
   registerTheme,
   registerSheet,
   getSheetRegistration,
+  MoralCodeViewer,
   _sheets: [
     {
       system: 'swade',
@@ -98,10 +101,11 @@ function registerTheme(theme) {
 /**
  * Looks at an actor and constructs the summary text for their moral code
  * @param {Actor} actor The actor to look at
+ * @param {boolean} post Whether to post the summary to chat;
+ * @returns {Promise<ChatMessage> | string |} If post is `true` it returns a promise that resolves to the generated chat message, otherwise it returns the generated string
  */
-function getMoralCodeSummary(actor) {
-  const code = actor.getFlag('moral-code', 'code');
-  if (!code) return null;
+function getMoralCodeSummary(actor, post = false) {
+  const code = actor.getFlag('moral-code', 'code') ?? {};
   const listItems = [];
   for (const [key, value] of Object.entries(code)) {
     const leaning = getLeaning(key, value);
@@ -109,11 +113,15 @@ function getMoralCodeSummary(actor) {
     const text = game.i18n.format(strength, { action: game.i18n.localize(`MC.${leaning}.Hint`) });
     listItems.push(`<li>${game.i18n.localize(`MC.${leaning}.${leaning}`)}: ${text}</li>`);
   }
-  ChatMessage.create({
-    content: `<ul>${listItems.join('\n')}</ul>`,
-    speaker: { actor: actor },
-    type: CONST.CHAT_MESSAGE_TYPES.OTHER,
-  });
+  const content = `<ul>${listItems.join('\n')}</ul>`;
+  if (post) {
+    return ChatMessage.create({
+      content: content,
+      speaker: { actor: actor },
+      type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+    });
+  }
+  return content;
 }
 
 /**
