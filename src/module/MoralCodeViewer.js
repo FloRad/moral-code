@@ -4,14 +4,21 @@ export class MoralCodeViewer extends FormApplication {
   }
 
   static get defaultOptions() {
-    const theme = game.settings.get('moral-code', 'theme');
     return foundry.utils.mergeObject(super.defaultOptions, {
       template: 'modules/moral-code/templates/viewer.hbs',
-      classes: ['moral-code', theme],
+      classes: ['moral-code', this.theme],
       width: 600,
       height: 'auto',
       resizable: false,
     });
+  }
+
+  /** @returns {string} Returns the CSS class of the selected theme, or classic as a default */
+  static get theme() {
+    const theme = game.settings.get('moral-code', 'theme');
+    const themes = game.modules.get('moral-code')?.api?._themes;
+    const themeExists = !!themes.find((t) => theme === t.class);
+    return themeExists ? theme : 'classic';
   }
 
   get id() {

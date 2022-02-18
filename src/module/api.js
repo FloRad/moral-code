@@ -1,7 +1,7 @@
 export const api = {
   getMoralCodeSummary,
-  registerSheet,
   registerTheme,
+  registerSheet,
   _sheets: [],
   _themes: [
     { class: 'solarized', label: 'MC.Theme.Solarized' },
@@ -17,8 +17,13 @@ export const api = {
  * @param {string} sheet.class - The class(es) to apply to the button to make it look good
  * @param {boolean} [sheet.insert] - If `true`, the Moral Code button will be inserted as a standalone button instead of replacing an element
  */
+// eslint-disable-next-line no-unused-vars
 function registerSheet(sheet) {
-  game.modules.get('moral-code').api._sheets.push(sheet);
+  game.modules.get('moral-code')?.api?._sheets.push(sheet);
+  const isDebugging = game.modules.get('_dev-mode')?.api?.getPackageDebugValue('moral-code');
+  if (isDebugging) {
+    console.debug('moral-code', '|', `Registered sheet ${sheet.sheetClass}`, sheet);
+  }
 }
 
 /**
@@ -47,7 +52,10 @@ function registerSheet(sheet) {
  */
 function registerTheme(theme) {
   game.modules.get('moral-code').api._themes.push(theme);
-  console.debug(`moral-code | Registered theme ${theme.label} with class ${theme.class}`);
+  const isDebugging = game.modules.get('_dev-mode')?.api?.getPackageDebugValue('moral-code');
+  if (isDebugging) {
+    console.debug('moral-code', '|', `Registered theme ${theme.label} with class ${theme.class}`);
+  }
 }
 
 /**
