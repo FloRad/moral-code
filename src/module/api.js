@@ -2,7 +2,7 @@ export const api = {
   getMoralCodeSummary,
   registerTheme,
   registerSheet,
-  getSheetData,
+  getSheetRegistration,
   _sheets: [
     {
       system: 'swade',
@@ -54,7 +54,7 @@ function registerSheet(sheet = { classes: ['moral-code'], insert: false, prepend
  * @param {string} sheet the class name of the sheet we're looking for
  * @returns the sheet registration data for the sheet, or undefined if nothing was found
  */
-function getSheetData(sheet) {
+function getSheetRegistration(sheet) {
   const sheets = game.modules.get('moral-code')?.api?._sheets;
   const isDebugging = game.modules.get('_dev-mode')?.api?.getPackageDebugValue('moral-code');
   if (isDebugging) {

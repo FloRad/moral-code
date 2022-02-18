@@ -29,7 +29,7 @@ Hooks.once('setup', () => {
 
   //set up the API here
   game.modules.get('moral-code').api = api;
-  Hooks.callAll('moralCodeReady', game.modules.get('moral-code').api);
+  Hooks.callAll('moralCodeReady', { registerTheme: api.registerTheme, registerSheet: api.registerSheet });
 
   // Register custom module settings
   registerSettings();
@@ -53,7 +53,7 @@ function onDevModeReady({ registerPackageDebugFlag }) {
  * @param {*} data
  */
 function onRenderActorSheet(sheet, html, _data) {
-  const sheetRegistration = game.modules.get('moral-code')?.api?.getSheetData(sheet.constructor.name);
+  const sheetRegistration = api.getSheetRegistration(sheet.constructor.name);
 
   //return early if the sheet isn't registered
   if (!sheetRegistration) return;
@@ -83,7 +83,7 @@ function onRenderActorSheet(sheet, html, _data) {
  * @param {Array<HeaderButton>} buttons
  */
 function onGetActorSheetHeaderButtons(sheet, buttons) {
-  const sheetRegistered = !!game.modules.get('moral-code')?.api?.getSheetData(sheet.constructor.name);
+  const sheetRegistered = !!api.getSheetData(sheet.constructor.name);
   //return early if the sheet is properly registered since we don't need the header button
   if (sheetRegistered) return;
   // only add the header button if the user is an owner (GMs are always owners)

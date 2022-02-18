@@ -2,13 +2,15 @@
 
 Moral Code is an implementation of [Dame GM's Blog Post] from 2015, adding an alternative to the classic 3x3 Alignment grid to Foundry VTT.
 
-Currently the module adds itself as a Header Button to Actor Sheets for GMs and the actors' owners
+Currently the module adds itself as a Header Button to Actor Sheets for GMs and the actors' owners.
+Systems can also register sheets and themes to customize Moral Code to their own tastes.
 
-##To Do:
+Moral Code currently offers built-in support for the following systems:
 
-- [x] Theming support
-- [ ] System registration API. Having a header button is okay, but replacing existing alignment inputs or adding a button to an existing sheet would be preferable
-- [ ] Add hooks for theme and sheet registration
+- D&D 5th Edition
+- Pathfinder 2nd Edition
+
+Don't see your system on the list? Check the [Wiki](https://github.com/FloRad/moral-code/wiki) on how the registration works
 
 ## Installation
 
