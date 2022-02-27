@@ -1,4 +1,14 @@
-# Moral Code
+# README
+
+<div align="center">
+
+  ![Compatible Foundry Version](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https%3A%2F%2Fraw.githubusercontent.com%2FFloRad%2Fmoral-code%2Fmaster%2Fsrc%2Fmodule.json)
+  [![Foundry Hub Endorsements](https://img.shields.io/endpoint?logoColor=white&url=https%3A%2F%2Fwww.foundryvtt-hub.com%2Fwp-json%2Fhubapi%2Fv1%2Fpackage%2Fmoral-code%2Fshield%2Fendorsements)](https://www.foundryvtt-hub.com/package/moral-code/)
+  ![Latest Release Download Count](https://img.shields.io/github/downloads/FloRad/moral-code/latest/module.zip)
+
+</div>
+
+## About
 
 Moral Code is an implementation of [Dame GM's Blog Post] from 2015, adding an alternative to the classic 3x3 Alignment grid to Foundry VTT.
 
